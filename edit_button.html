@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="edit_button.js"></script>
+</head>
+<body ng-app = "App" ng-controller = "Controller">
+    <table ng-show = "table" border="1">
+        <tr>
+            <td>#</td>
+            <td>ho Ten</td>
+            <td>lop</td>
+            <td>Thao tac</td>
+        </tr>
+        <tr ng-repeat = "x in array">
+            <td>{{$index + 1}}</td>
+            <td>{{x.hoten}}</td>
+            <td>{{x.lop}}</td>
+            <td>
+                <button ng-click ="edit(x)">Sua</button>
+            </td>
+        </tr>
+    </table>
+    <div ng-hide = "table">
+        <input type="text" ng-model = "x.hoten">
+        <input type="text" ng-model = "x.lop">
+        <button ng-click = "save()">Luu</button>
+    </div>
+</body>
+</html>
